@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cờ Caro</title>
+    <link rel="stylesheet" type="text/css" href="CaseStudy_Carogame.css"/>
+    <script type="text/javascript" src="CaseStudy.js"></script>
+    <script type="text/javascript" src="AI.js"></script>
+</head>
+<body>
+<div class="divHeading">
+    <h1>*** CARO GAME ***</h1>
+    <h3>Good luck have fun!</h3>
+</div>
+<div class="divBoard">
+    <table id="table" style="background-color: white">
+        <tr class="row">
+            <td class="col"><div id="0" class="square" onclick="play(0,0)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1" ></div></td>
+            <td class="col"><div id="1" class="square" onclick="play(0,1)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="2" class="square" onclick="play(0,2)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="3" class="square" onclick="play(0,3)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="4" class="square" onclick="play(0,4)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="5" class="square" onclick="play(0,5)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="6" class="square" onclick="play(0,6)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="7" class="square" onclick="play(0,7)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="8" class="square" onclick="play(0,8)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="9" class="square" onclick="play(0,9)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="10" class="square" onclick="play(0,10)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="11" class="square" onclick="play(0,11)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="12" class="square" onclick="play(0,12)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="13" class="square" onclick="play(0,13)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="14" class="square" onclick="play(0,14)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="15" class="square" onclick="play(0,15)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="16" class="square" onclick="play(0,16)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="17" class="square" onclick="play(0,17)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="18" class="square" onclick="play(0,18)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+        </tr>
+        <tr class="row">
+            <td class="col"><div id="19" class="square" onclick="play(1,0)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="20" class="square" onclick="play(1,1)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="21" class="square" onclick="play(1,2)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="22" class="square" onclick="play(1,3)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="23" class="square" onclick="play(1,4)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="24" class="square" onclick="play(1,5)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="25" class="square" onclick="play(1,6)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="26" class="square" onclick="play(1,7)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="27" class="square" onclick="play(1,8)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="28" class="square" onclick="play(1,9)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="29" class="square" onclick="play(1,10)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="30" class="square" onclick="play(1,11)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="31" class="square" onclick="play(1,12)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="32" class="square" onclick="play(1,13)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="33" class="square" onclick="play(1,14)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="34" class="square" onclick="play(1,15)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="35" class="square" onclick="play(1,16)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="36" class="square" onclick="play(1,17)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="37" class="square" onclick="play(1,18)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+        </tr>
+        <tr class="row">
+            <td class="col"><div id="38" class="square" onclick="play(2,0)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="39" class="square" onclick="play(2,1)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="40" class="square" onclick="play(2,2)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="41" class="square" onclick="play(2,3)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="42" class="square" onclick="play(2,4)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="43" class="square" onclick="play(2,5)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="44" class="square" onclick="play(2,6)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="45" class="square" onclick="play(2,7)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="46" class="square" onclick="play(2,8)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="47" class="square" onclick="play(2,9)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="48" class="square" onclick="play(2,10)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="49" class="square" onclick="play(2,11)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="50" class="square" onclick="play(2,12)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="51" class="square" onclick="play(2,13)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="52" class="square" onclick="play(2,14)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="53" class="square" onclick="play(2,15)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="54" class="square" onclick="play(2,16)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="55" class="square" onclick="play(2,17)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="56" class="square" onclick="play(2,18)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+        </tr>
+        <tr class="row">
+            <td class="col"><div id="0" class="square" onclick="play(3,0)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="1" class="square" onclick="play(3,1)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="2" class="square" onclick="play(3,2)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="3" class="square" onclick="play(3,3)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="4" class="square" onclick="play(3,4)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="5" class="square" onclick="play(3,5)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="6" class="square" onclick="play(3,6)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="7" class="square" onclick="play(3,7)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="8" class="square" onclick="play(3,8)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="9" class="square" onclick="play(3,9)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="10" class="square" onclick="play(3,10)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" player="-1"></div></td>
+            <td class="col"><div id="11" class="square" onclick="play(3,11)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="12" class="square" onclick="play(3,12)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="13" class="square" onclick="play(3,13)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="14" class="square" onclick="play(3,14)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="15" class="square" onclick="play(3,15)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="16" class="square" onclick="play(3,16)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="17" class="square" onclick="play(3,17)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="18" class="square" onclick="play(3,18)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+        </tr>
+        <tr class="row">
+            <td class="col"><div id="0" class="square" onclick="play(4,0)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="1" class="square" onclick="play(4,1)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="2" class="square" onclick="play(4,2)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="3" class="square" onclick="play(4,3)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="4" class="square" onclick="play(4,4)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="5" class="square" onclick="play(4,5)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="6" class="square" onclick="play(4,6)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="7" class="square" onclick="play(4,7)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="8" class="square" onclick="play(4,8)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="9" class="square" onclick="play(4,9)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="10" class="square" onclick="play(4,10)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="11" class="square" onclick="play(4,11)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="12" class="square" onclick="play(4,12)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="13" class="square" onclick="play(4,13)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="14" class="square" onclick="play(4,14)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="15" class="square" onclick="play(4,15)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="16" class="square" onclick="play(4,16)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="17" class="square" onclick="play(4,17)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="18" class="square" onclick="play(4,18)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+        </tr>
+        <tr class="row">
+            <td class="col"><div id="cell-5-0" class="square" onclick="play(5,0)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-5-1" class="square" onclick="play(5,1)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-5-2" class="square" onclick="play(5,2)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-5-3" class="square" onclick="play(5,3)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-5-4" class="square" onclick="play(5,4)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-5-5" class="square" onclick="play(5,5)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-5-6" class="square" onclick="play(5,6)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-5-7" class="square" onclick="play(5,7)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-5-8" class="square" onclick="play(5,8)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-5-9" class="square" onclick="play(5,9)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-5-10" class="square" onclick="play(5,10)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-5-11" class="square" onclick="play(5,11)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-5-12" class="square" onclick="play(5,12)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-5-13" class="square" onclick="play(5,13)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-5-14" class="square" onclick="play(5,14)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-5-15" class="square" onclick="play(5,15)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-5-16" class="square" onclick="play(5,16)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-5-17" class="square" onclick="play(5,17)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-5-18" class="square" onclick="play(5,18)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+        </tr>
+        <tr class="row">
+            <td class="col"><div id="cell-6-0" class="square" onclick="play(6,0)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-6-1" class="square" onclick="play(6,1)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-6-2" class="square" onclick="play(6,2)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-6-3" class="square" onclick="play(6,3)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-6-4" class="square" onclick="play(6,4)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-6-5" class="square" onclick="play(6,5)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-6-6" class="square" onclick="play(6,6)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-6-7" class="square" onclick="play(6,7)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-6-8" class="square" onclick="play(6,8)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-6-9" class="square" onclick="play(6,9)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-6-10" class="square" onclick="play(6,10)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-6-11" class="square" onclick="play(6,11)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-6-12" class="square" onclick="play(6,12)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-6-13" class="square" onclick="play(6,13)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-6-14" class="square" onclick="play(6,14)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-6-15" class="square" onclick="play(6,15)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-6-16" class="square" onclick="play(6,16)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-6-17" class="square" onclick="play(6,17)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-6-18" class="square" onclick="play(6,18)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+        </tr>
+        <tr class="row">
+            <td class="col"><div id="cell-7-0" class="square" onclick="play(7,0)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-7-1" class="square" onclick="play(7,1)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-7-2" class="square" onclick="play(7,2)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-7-3" class="square" onclick="play(7,3)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-7-4" class="square" onclick="play(7,4)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-7-5" class="square" onclick="play(7,5)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-7-6" class="square" onclick="play(7,6)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-7-7" class="square" onclick="play(7,7)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-7-8" class="square" onclick="play(7,8)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-7-9" class="square" onclick="play(7,9)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-7-10" class="square" onclick="play(7,10)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-7-11" class="square" onclick="play(7,11)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-7-12" class="square" onclick="play(7,12)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-7-13" class="square" onclick="play(7,13)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-7-14" class="square" onclick="play(7,14)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-7-15" class="square" onclick="play(7,15)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-7-16" class="square" onclick="play(7,16)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-7-17" class="square" onclick="play(7,17)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-7-18" class="square" onclick="play(7,18)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+        </tr>
+        <tr class="row">
+            <td class="col"><div id="cell-8-0" class="square" onclick="play(8,0)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-8-1" class="square" onclick="play(8,1)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-8-2" class="square" onclick="play(8,2)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-8-3" class="square" onclick="play(8,3)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-8-4" class="square" onclick="play(8,4)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-8-5" class="square" onclick="play(8,5)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-8-6" class="square" onclick="play(8,6)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-8-7" class="square" onclick="play(8,7)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-8-8" class="square" onclick="play(8,8)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-8-9" class="square" onclick="play(8,9)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-8-10" class="square" onclick="play(8,10)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-8-11" class="square" onclick="play(8,11)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-8-12" class="square" onclick="play(8,12)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-8-13" class="square" onclick="play(8,13)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-8-14" class="square" onclick="play(8,14)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-8-15" class="square" onclick="play(8,15)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-8-16" class="square" onclick="play(8,16)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-8-17" class="square" onclick="play(8,17)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-8-18" class="square" onclick="play(8,18)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+        </tr>
+        <tr class="row">
+            <td class="col"><div id="cell-9-0" class="square" onclick="play(9,0)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-9-1" class="square" onclick="play(9,1)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-9-2" class="square" onclick="play(9,2)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-9-3" class="square" onclick="play(9,3)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-9-4" class="square" onclick="play(9,4)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-9-5" class="square" onclick="play(9,5)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-9-6" class="square" onclick="play(9,6)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-9-7" class="square" onclick="play(9,7)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-9-8" class="square" onclick="play(9,8)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-9-9" class="square" onclick="play(9,9)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-9-10" class="square" onclick="play(9,10)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-9-11" class="square" onclick="play(9,11)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-9-12" class="square" onclick="play(9,12)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-9-13" class="square" onclick="play(9,13)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-9-14" class="square" onclick="play(9,14)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-9-15" class="square" onclick="play(9,15)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-9-16" class="square" onclick="play(9,16)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-9-17" class="square" onclick="play(9,17)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-9-18" class="square" onclick="play(9,18)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+        </tr>
+        <tr class="row">
+            <td class="col"><div id="cell-10-0" class="square" onclick="play(10,0)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-10-1" class="square" onclick="play(10,1)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-10-2" class="square" onclick="play(10,2)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-10-3" class="square" onclick="play(10,3)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-10-4" class="square" onclick="play(10,4)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-10-5" class="square" onclick="play(10,5)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-10-6" class="square" onclick="play(10,6)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-10-7" class="square" onclick="play(10,7)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-10-8" class="square" onclick="play(10,8)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-10-9" class="square" onclick="play(10,9)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-10-10" class="square" onclick="play(10,10)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-10-11" class="square" onclick="play(10,11)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-10-12" class="square" onclick="play(10,12)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-10-13" class="square" onclick="play(10,13)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-10-14" class="square" onclick="play(10,14)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-10-15" class="square" onclick="play(10,15)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-10-16" class="square" onclick="play(10,16)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-10-17" class="square" onclick="play(10,17)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-10-18" class="square" onclick="play(10,18)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+        </tr>
+        <tr class="row">
+            <td class="col"><div id="cell-11-0" class="square" onclick="play(11,0)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-11-1" class="square" onclick="play(11,1)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-11-2" class="square" onclick="play(11,2)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-11-3" class="square" onclick="play(11,3)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-11-4" class="square" onclick="play(11,4)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-11-5" class="square" onclick="play(11,5)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-11-6" class="square" onclick="play(11,6)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-11-7" class="square" onclick="play(11,7)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-11-8" class="square" onclick="play(11,8)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-11-9" class="square" onclick="play(11,9)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-11-10" class="square" onclick="play(11,10)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-11-11" class="square" onclick="play(11,11)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-11-12" class="square" onclick="play(11,12)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-11-13" class="square" onclick="play(11,13)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-11-14" class="square" onclick="play(11,14)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-11-15" class="square" onclick="play(11,15)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-11-16" class="square" onclick="play(11,16)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-11-17" class="square" onclick="play(11,17)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-11-18" class="square" onclick="play(11,18)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+        </tr>
+        <tr class="row">
+            <td class="col"><div id="cell-12-0" class="square" onclick="play(12,0)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-12-1" class="square" onclick="play(12,1)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-12-2" class="square" onclick="play(12,2)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-12-3" class="square" onclick="play(12,3)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-12-4" class="square" onclick="play(12,4)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-12-5" class="square" onclick="play(12,5)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-12-6" class="square" onclick="play(12,6)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-12-7" class="square" onclick="play(12,7)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-12-8" class="square" onclick="play(12,8)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-12-9" class="square" onclick="play(12,9)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-12-10" class="square" onclick="play(12,10)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-12-11" class="square" onclick="play(12,11)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-12-12" class="square" onclick="play(12,12)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-12-13" class="square" onclick="play(12,13)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-12-14" class="square" onclick="play(12,14)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-12-15" class="square" onclick="play(12,15)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-12-16" class="square" onclick="play(12,16)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-12-17" class="square" onclick="play(12,17)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-12-18" class="square" onclick="play(12,18)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+        </tr>
+        <tr class="row">
+            <td class="col"><div id="cell-13-0" class="square" onclick="play(13,0)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-13-1" class="square" onclick="play(13,1)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-13-2" class="square" onclick="play(13,2)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-13-3" class="square" onclick="play(13,3)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-13-4" class="square" onclick="play(13,4)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-13-5" class="square" onclick="play(13,5)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-13-6" class="square" onclick="play(13,6)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-13-7" class="square" onclick="play(13,7)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-13-8" class="square" onclick="play(13,8)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-13-9" class="square" onclick="play(13,9)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-13-10" class="square" onclick="play(13,10)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-13-11" class="square" onclick="play(13,11)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-13-12" class="square" onclick="play(13,12)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-13-13" class="square" onclick="play(13,13)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-13-14" class="square" onclick="play(13,14)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-13-15" class="square" onclick="play(13,15)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-13-16" class="square" onclick="play(13,16)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-13-17" class="square" onclick="play(13,17)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-13-18" class="square" onclick="play(13,18)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+        </tr>
+        <tr class="row">
+            <td class="col"><div id="cell-14-0" class="square" onclick="play(14,0)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-14-1" class="square" onclick="play(14,1)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-14-2" class="square" onclick="play(14,2)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-14-3" class="square" onclick="play(14,3)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-14-4" class="square" onclick="play(14,4)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-14-5" class="square" onclick="play(14,5)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-14-6" class="square" onclick="play(14,6)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-14-7" class="square" onclick="play(14,7)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-14-8" class="square" onclick="play(14,8)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-14-9" class="square" onclick="play(14,9)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-14-10" class="square" onclick="play(14,10)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-14-11" class="square" onclick="play(14,11)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-14-12" class="square" onclick="play(14,12)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-14-13" class="square" onclick="play(14,13)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-14-14" class="square" onclick="play(14,14)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-14-15" class="square" onclick="play(14,15)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-14-16" class="square" onclick="play(14,16)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-14-17" class="square" onclick="play(14,17)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-14-18" class="square" onclick="play(14,18)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+        </tr>
+        <tr class="row">
+            <td class="col"><div id="cell-15-0" class="square" onclick="play(15,0)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-15-1" class="square" onclick="play(15,1)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-15-2" class="square" onclick="play(15,2)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-15-3" class="square" onclick="play(15,3)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-15-4" class="square" onclick="play(15,4)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-15-5" class="square" onclick="play(15,5)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-15-6" class="square" onclick="play(15,6)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-15-7" class="square" onclick="play(15,7)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-15-8" class="square" onclick="play(15,8)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-15-9" class="square" onclick="play(15,9)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-15-10" class="square" onclick="play(15,10)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-15-11" class="square" onclick="play(15,11)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-15-12" class="square" onclick="play(15,12)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-15-13" class="square" onclick="play(15,13)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-15-14" class="square" onclick="play(15,14)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-15-15" class="square" onclick="play(15,15)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-15-16" class="square" onclick="play(15,16)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-15-17" class="square" onclick="play(15,17)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-15-18" class="square" onclick="play(15,18)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+        </tr>
+        <tr class="row">
+            <td class="col"><div id="cell-16-0" class="square" onclick="play(16,0)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-16-1" class="square" onclick="play(16,1)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-16-2" class="square" onclick="play(16,2)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-16-3" class="square" onclick="play(16,3)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-16-4" class="square" onclick="play(16,4)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-16-5" class="square" onclick="play(16,5)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-16-6" class="square" onclick="play(16,6)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-16-7" class="square" onclick="play(16,7)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-16-8" class="square" onclick="play(16,8)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-16-9" class="square" onclick="play(16,9)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-16-10" class="square" onclick="play(16,10)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-16-11" class="square" onclick="play(16,11)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-16-12" class="square" onclick="play(16,12)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-16-13" class="square" onclick="play(16,13)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-16-14" class="square" onclick="play(16,14)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-16-15" class="square" onclick="play(16,15)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-16-16" class="square" onclick="play(16,16)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-16-17" class="square" onclick="play(16,17)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-16-18" class="square" onclick="play(16,18)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+        </tr>
+        <tr class="row">
+            <td class="col"><div id="cell-17-0" class="square" onclick="play(17,0)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-17-1" class="square" onclick="play(17,1)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-17-2" class="square" onclick="play(17,2)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-17-3" class="square" onclick="play(17,3)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-17-4" class="square" onclick="play(17,4)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-17-5" class="square" onclick="play(17,5)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-17-6" class="square" onclick="play(17,6)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-17-7" class="square" onclick="play(17,7)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-17-8" class="square" onclick="play(17,8)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-17-9" class="square" onclick="play(17,9)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-17-10" class="square" onclick="play(17,10)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-17-11" class="square" onclick="play(17,11)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-17-12" class="square" onclick="play(17,12)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-17-13" class="square" onclick="play(17,13)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-17-14" class="square" onclick="play(17,14)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-17-15" class="square" onclick="play(17,15)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-17-16" class="square" onclick="play(17,16)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-17-17" class="square" onclick="play(17,17)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+            <td class="col"><div id="cell-17-18" class="square" onclick="play(17,18)" onmouseover="mouseOver(id)" onmouseout="mouseOut(id)" ></div></td>
+        </tr>
+    </table>
+</div>
+
+<div class="divControl" >
+    <div id="label1"><b>CURRENT PLAYER</b></div>
+    <div id="imgPlayer"></div>
+    <input type="button" class="button" value="PLAY GAME" onclick="playGame()">
+</div>
+</body>
+</html>
