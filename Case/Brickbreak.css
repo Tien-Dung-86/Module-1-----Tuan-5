@@ -1,0 +1,21 @@
+canvas {
+    background: #eeeeee;
+    display: block;
+    margin: auto;
+
+}
+html {
+    background-image: url("Images/YLIA.jpg");
+}
+
+.heading {
+    text-align: center;
+}
+
+#label1 {
+    color: deeppink;
+}
+
+#label2 {
+    color: red;
+}
