@@ -1,0 +1,89 @@
+html,body{
+    background-image: url("Images/YLIA.jpg");
+	height : 100%;
+	width  : 100%;
+}
+
+#divmain {
+	width:800px;
+	height:800px;
+	float:left;
+	margin-left:150px;
+	margin-top:20px;
+	overflow:hidden;
+}
+.heading{
+	text-align: center;
+}
+#divHeading{
+	text-align: center;
+}
+#divBox{
+	text-align: center;
+}
+#divcontrol {
+	width:300px;
+	height:500px;
+	float:right;
+	background-color: bisque;
+	margin-right:150px;
+	margin-top:20px;
+	overflow:hidden;
+}
+
+.audi{
+	width: 300px;
+}
+
+#imgPlayer {
+	width:100px;
+	height:100px;
+	margin:auto;
+	margin-top:5px;
+	background-image:url('Images/O.png');
+	background-repeat:round;
+}
+
+#pgrTime {
+	margin-left:10px;
+	margin-top:14px;
+	width:150px;
+	height:14px;
+	background-color:springgreen;
+}
+
+.square {
+	width:25px;
+	height:25px;
+	font-size:9px;
+	border-right:#fff 2px solid;
+	border-top:#fff 1px solid;
+	background-color:#fff;
+	background-repeat:round;
+	overflow:hidden;
+	opacity:0.65;
+	cursor:pointer;
+}
+
+#label1 {
+	margin-top:10px;
+	margin-left:20px;
+}
+
+#label2 {
+	margin-top:10px;
+	margin-left:20px;
+	float:left;
+}
+
+.button {
+	width:200px;
+	height:50px;
+	margin-left:50px;
+	margin-top:30px;
+	font-weight:700;
+	background-color: cornflowerblue;
+	cursor:pointer;
+	border-radius:15px;
+	color: cornsilk;
+}

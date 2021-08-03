@@ -1,25 +1,25 @@
-const size = 16;
+const size = 25;
 const countmax = 5;
-let CPlayer = 0; // Current Player (0 is O,1 is X)
+let choosePlayer = 0;
+let l_played = [];
+let l_win = [];
+let mode = 0;
+let AI = false;
 let InGame = false;
-let l_played = [], l_win = [];
-let mode = 0; // 0: no block; 1: block
-// let AI = false;
 
-//New Game
+//Start
 function Loaded() {
-    CPlayer = 0; // Current Player (0 is O,1 is X)
-    l_played = [];
-    l_win = [];
+    choosePlayer = 0;
+    let l_played = [];
+    let l_win = [];
     let imgp = document.getElementById("imgPlayer");
-    imgp.style.backgroundImage = "url('Images/Opng.png')";
+    imgp.style.backgroundImage = "url('Images/O.png')";
 
 
+    // Create board game
     let table = document.getElementById("table");
     let row = document.getElementsByClassName("row");
     let square = document.getElementsByClassName("square");
-
-// table game
     table.innerHTML = "";
     for (y = 0; y < size; y++) {
         table.innerHTML += '<tr class="row"></tr>';
@@ -32,11 +32,6 @@ function Loaded() {
     }
 }
 
-function playGame() {
-    let rows = document.getElementById("row").value;
-    let columns = document.getElementById("column").value;
-    document.getElementById("caro").innerHTML = render(rows, columns);
-}
 
 //Play Game
 function Click(id) {
@@ -44,34 +39,33 @@ function Click(id) {
     let square = document.getElementsByClassName("square");
     let pos = parseInt(id);
     if (square.item(pos).getAttribute("player") !== "-1") return;
-    let path = "url('Images/Opng.png')";
-    if (CPlayer === 1) path = "url('Images/Xpng.png')";
+    let path = "url('Images/O.png')";
+    if (choosePlayer === 1) path = "url('Images/X.png')";
     square.item(pos).style.backgroundImage = path;
-    square.item(pos).setAttribute("player", CPlayer.toString());
+    square.item(pos).setAttribute("player", choosePlayer.toString());
     l_played.push(pos);
 
     let win = WinGame();
-    let pwin = CPlayer;
+    let playerWin = choosePlayer;
 
     if (!AI) {
-        if (CPlayer === 0) CPlayer = 1;
-        else CPlayer = 0;
-
-        let iplayer = "url('Images/Opng.png')";
-        if (CPlayer === 1) iplayer = "url('Images/Xpng.png')";
+        if (choosePlayer === 0) choosePlayer = 1;
+        else choosePlayer = 0;
+        let imgPlayer = "url('Images/O.png')";
+        if (choosePlayer === 1) imgPlayer = "url('Images/X.png')";
         let imgp = document.getElementById("imgPlayer");
-        imgp.style.backgroundImage = iplayer;
+        imgp.style.backgroundImage = imgPlayer;
     } else {
         if (!win) {
             AIMode();
             win = WinGame();
-            pwin = 1;
+            playerWin = 1;
         }
     }
 
     if (win) {
-        let mess = 'Player with "X" win!!!';
-        if (pwin === 0) mess = 'Player with "O" win!!!';
+        let mess = '2ND Player with "X" win!!!';
+        if (playerWin === 0) mess = '1ST Player with "O" win!!!';
         alert(mess);
         InGame = false;
     } else {
@@ -91,7 +85,8 @@ function minab(a, b) {
     else return b;
 }
 
-// di chuyển mouse hướng vào ô
+
+// direct square
 function MouseOver(id) {
     if (!InGame) return;
     let square = document.getElementsByClassName("square");
@@ -99,7 +94,7 @@ function MouseOver(id) {
     square.item(pos).style.backgroundColor = "#3f3";
 }
 
-// di chuyển mouse ra ngoài ô
+// out square
 function MouseOut(id) {
     if (!InGame) return;
     let square = document.getElementsByClassName("square");
@@ -148,9 +143,9 @@ function winHor(x, y, Board) {
         }
     }
     if (count >= countmax) {
-        if (mode === 0) {
+        if (mode === 0)
             return true;
-        } else if(counto >= 2) {
+        else if (counto >= 2) {
             return false;
         } else {
             return true;
@@ -215,7 +210,7 @@ function winCross1(x, y, Board) {
         }
     }
     if (count >= countmax) {
-        if (mode === 0)
+        if (mode == 0)
             return true;
         else if (counto >= 2) {
             return false;
@@ -260,9 +255,16 @@ function winCross2(x, y, Board) {
     return false;
 }
 
-// các sự kiện
-function P_vs_P() {
+// Event
+function playerVsPlayer() {
     AI = false;
+    InGame = true;
+    Loaded();
+    InGame = true;
+}
+
+function playerVsComputer() {
+    AI = true;
     Loaded();
     InGame = true;
     let pgr = document.getElementById("pgrTime");
@@ -270,11 +272,20 @@ function P_vs_P() {
     LoadProgress();
 }
 
-function P_vs_C() {
-    AI = true;
-    Loaded();
-    InGame = true;
-    let pgr = document.getElementById("pgrTime");
-    pgr.value = pgr.getAttribute("max");
-    LoadProgress();
+
+function LoadProgress() {
+    if (!InGame) return;
+    setTimeout(
+        function () {
+            let pgr = document.getElementById("pgrTime");
+            pgr.value--;
+            if (pgr.value > 0)
+                LoadProgress();
+            else {
+                let mess = '2ND Player with "X" win!!!';
+                if (choosePlayer === 1) mess = '1ST Player with "O" win!!!';
+                alert(mess);
+                InGame = false;
+            }
+        }, 100);
 }
